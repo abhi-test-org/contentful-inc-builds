@@ -37,6 +37,8 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
+
+        console.log(process.memoryUsage())
       }
     })
   })
