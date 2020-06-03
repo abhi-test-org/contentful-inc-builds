@@ -26,20 +26,16 @@ exports.createPages = ({ graphql, actions }) => {
         reject(result.errors)
       }
 
-      while (true) {
-        const posts = result.data.allContentfulBlogPost.edges
-        posts.forEach((post, index) => {
-          createPage({
-            path: `/blog/${post.node.slug}/`,
-            component: blogPost,
-            context: {
-              slug: post.node.slug,
-            },
-          })
+      const posts = result.data.allContentfulBlogPost.edges
+      posts.forEach((post, index) => {
+        createPage({
+          path: `/blog/${post.node.slug}/`,
+          component: blogPost,
+          context: {
+            slug: post.node.slug,
+          },
         })
-
-        console.log(process.memoryUsage())
-      }
+      })
     })
   })
 }
