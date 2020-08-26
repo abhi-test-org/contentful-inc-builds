@@ -28,7 +28,7 @@ class RootIndex extends React.Component {
                 )
               })}
             </ul>
-suhhh
+suhhhhh
           </div>
         </div>
       </Layout>
